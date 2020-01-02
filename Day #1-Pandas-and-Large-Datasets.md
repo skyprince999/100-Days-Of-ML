@@ -31,7 +31,7 @@ This method provides information regarding the dataframe including index dtype &
 By setting  ```memory_usage= 'deep'``` The real memory usage is calculated and shown in human readable units.
 
 ```
-gl.info(memory_usage='deep')
+data.info(memory_usage='deep')
 
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 171907 entries, 0 to 171906
@@ -45,7 +45,7 @@ That's a lot of memory usage! Let's see what is taking up the majority of the sp
 ```
 for dtype in ['int64', 'float', 'object']:
     print(dtype)
-    selected_dtype = gl.select_dtypes(include=[dtype])
+    selected_dtype = data.select_dtypes(include=[dtype])
     selected_dtype.shape
     mean_usage = selected_dtype.memory_usage(deep=True).mean() / 1024 ** 2
     total_usage = selected_dtype.memory_usage(deep=True).sum() / 1024 ** 2
@@ -97,7 +97,7 @@ The above values can be found by using the ```np.finfo``` and ```np.iinfo```
 for iit in ['float16', 'float32', 'float64']:
     print(np.finfo(iit))
 ```
-
+![np.finfo()](https://github.com/skyprince999/100DaysOfML/blob/master/images/np_finfo.PNG)
 
 
 So by downcasting we can save memory. We start by separating out the ```int64``` variables and downcast it to an unsigned integer variable. We will use the ```mem_usage``` function defined above to calculate the memory used by the variables (before & after the operation)
@@ -124,7 +124,7 @@ Next we check the ```float``` variables & downcast it to numeric. This is done b
 Later we check the memory usage  
 ```
 data_float = data.select_dtypes(include=['float'])
-converted_float = gl_float.apply(pd.to_numeric, downcast='float')
+converted_float = data_float.apply(pd.to_numeric, downcast='float')
 
 print(data_float.shape)
 print(mem_usage(data_float))
@@ -137,6 +137,66 @@ Memory usage has dropped by 50%
 (171907, 77)
 100.99 MB
 50.49 MB
+```
+
+Object data types are stored as strings. The header has the length of the object & the address of each of the items 
+
+![numpy vs string](/images/numpy_vs_string.png)
+
+We choose the object categories 
+
+```
+data_obj = data.select_dtypes(include=['object']).copy()
+print(data_obj.shape)
+data_obj.describe().T.head()
+
+(171907, 161)
+```
+
+![Object description](/images/object_describe.png)
+
+
+Object variables which have few unique values are converted to categorical ones. If there is a high number of unique values, converting it to categorical will not save space. 
+
+```
+converted_obj = pd.DataFrame()
+
+for col in data_obj.columns:
+    num_unique_values = len(data_obj[col].unique())
+    num_values = len(data_obj[col])
+    
+    if num_unique_values/ num_values  < 0.5: # Convert only if unique values are less than 50% of the total
+        converted_obj.loc[:,col] = data_obj[col].astype('category')
+    else:
+        converted_obj[:,col] = data_obj[col]
+
+print(mem_usage(data_obj))
+print(mem_usage(converted_obj))
+```
+```
+751.64 MB
+51.67 MB
+```
+93% less space is required. This is a massive reduction! 
+
+
+Lets now bring together all the converted variables (downcasted & converted to categorical) and check the total memory saved. 
+
+```
+optimized_data = data.copy()
+
+optimized_data[converted_int.columns] = converted_int
+optimized_data[converted_float.columns] = converted_float
+optimized_data[converted_obj.columns] = converted_obj
+
+print("Size of original dataframe: ", mem_usage(data))
+print("Size of optimized dataframe: ",mem_usage(optimized_data))
+```
+The new dataframe is now 12% of the original size.
+
+```
+Size of original dataframe: 860.50 MB
+Size of optimized dataframe: 103.64 MB
 ```
 
 
