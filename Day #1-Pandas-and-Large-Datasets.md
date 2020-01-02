@@ -6,15 +6,17 @@ Source File:
 
 https://data.world/dataquest/mlb-game-logs 
 
-The above link points to the game logs of MLB games. It can be downloaded from this link as a csv file
+The above link points to the game logs of MLB games. It can be downloaded from the link as a csv file
 
 ```
 import pandas as pd
 
 data = pd.read_csv(filename)
 
+data.head()
 ```
 
+[data.head()](__images/data_head.png)
 
 
 
