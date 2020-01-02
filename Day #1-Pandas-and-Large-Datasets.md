@@ -153,7 +153,7 @@ data_obj.describe().T.head()
 (171907, 161)
 ```
 
-![Object description](/images/object_describe.png)
+![Object description](/images/object_describe.PNG)
 
 
 Object variables which have few unique values are converted to categorical ones. If there is a high number of unique values, converting it to categorical will not save space. 
