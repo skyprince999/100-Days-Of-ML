@@ -199,7 +199,32 @@ Size of original dataframe: 860.50 MB
 Size of optimized dataframe: 103.64 MB
 ```
 
+The optimized dataframe can then be stored as a pickle file. This is a more memory efficient method of storing data
 
+```
+import os
+optimized_gl.to_pickle('game_logs.pkl')
+
+print("game_logs.csv: {:03.2f}".format(os.stat('game_logs.csv').st_size / 1024 ** 2))
+print("game_logs.pkl: {:03.2f}".format( os.stat('game_logs.pkl').st_size / 1024 ** 2))
+
+```
+We get a 37% reduction in memory size.
+```
+game_logs.csv: 129.79
+game_logs.pkl: 81.73
+```
+
+
+**To Summarize:**
+
+**[x] Downcast float columns to int8/int16**
+
+**[x] If there are no negative values make the values unsigned**
+
+**[x] Convert object variables with low number of unique values to categorical variables**
+
+**[x] Store the optimized dataframe as a pickle file**
 
 
 
