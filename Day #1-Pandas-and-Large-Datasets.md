@@ -16,7 +16,7 @@ data = pd.read_csv(filename)
 data.head()
 ```
 
-[data.head()](_images/data_head.png)
+[data.head()](images/data_head.png)
 
 
 
