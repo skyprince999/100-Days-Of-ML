@@ -5,15 +5,25 @@ Do you believe that we are walking on the shoulder of Giants! That this is the n
 This repo is an endavour to learn new things and document it over time. 
 
 Day#1 Pandas and large datasets
+
 Day#2 Intelligent Search
+
 Day#3 Telecom case study 
+
 Day#4 Data Science Bowl 2019
+
 Day#5 TFv2 Kaggle Q&A Competition
+
 Day#6 Tensorflow tutorials
+
 Day#7 Pipeline for extracting face crops from video
+
 Day#8 Beginner tutorial for PyTorch
+
 Day#9 Dataloader tutorial for PyTorch
+
 Day#10 Remaining PyTorch tutorials
+
 
 
 
