@@ -1,6 +1,8 @@
 # 100 Days Of Machine Learning
 
-Do you believe that we are walking on the shoulder of Giants! That this is the new renaissance? Where we are using code to create a new world order! 
+Do you believe that we are walking on the shoulder of Giants!
+That this is the new renaissance? 
+Where we use Code to create a New World order! 
 
 This repo is part of my endavour to learn new things and document it over time. Started it as my New Year resolution for 2020! Lets see how I finish it!  
 
