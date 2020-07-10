@@ -1,6 +1,7 @@
 # 100 Days Of Machine Learning
 
 Do you believe....
+
 That we walk on the shoulders of Giants!
 
 That this is the new renaissance? 
