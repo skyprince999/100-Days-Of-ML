@@ -4,29 +4,10 @@ Do you believe that we are walking on the shoulder of Giants! That this is the n
 
 This repo is part of my endavour to learn new things and document it over time. Started it as my New Year resolution for 2020! Lets see how I finish it!  
 
-Day#1 Pandas and large datasets
-
-Day#2 Intelligent Search
-
-Day#3 Telecom case study 
-
-Day#4 Data Science Bowl 2019
-
-Day#5 TFv2 Kaggle Q&A Competition
-
-Day#6 Tensorflow tutorials
-
-Day#7 Pipeline for extracting face crops from video
-
-Day#8 Beginner tutorial for PyTorch
-
-Day#9 Dataloader tutorial for PyTorch
-
-Day#10 Remaining PyTorch tutorials
-
-
-
-
 Remember - "The lasting impact of technology (AI/ML) isn't any specific product or feature that will be built. But on how it will enable people to live a better life."
 
+
+Started this journey on 1st Jan 2020 
+
+Currently @ the half way mark - 10th July 2020 and completed 33 days of Machine Learning (ie 1/3rd of the target)
 
