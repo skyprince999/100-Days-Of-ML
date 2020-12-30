@@ -30,7 +30,7 @@ Remember - "The lasting impact of technology (AI/ML) isn't any specific product 
 - 5th Sept 2020: at 75% mark
   Completed 38 days of code 
   
-## End-Of-Date 31st December 2020 
+## End-Of-Year 31st December 2020 
 
 - Last day of the year and completed slightly more than ~40% of the expected number of days! Frankly an average performance! :)
 
