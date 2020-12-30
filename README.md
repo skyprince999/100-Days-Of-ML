@@ -30,5 +30,14 @@ Remember - "The lasting impact of technology (AI/ML) isn't any specific product 
 - 5th Sept 2020: at 75% mark
   Completed 38 days of code 
   
+## End-Of-Date 31st December 2020 
 
+- Last day of the year and completed around 45% of the expected number of days! Frankly an average performance! 
 
+- But still some highlights of the year
+   + Did some exciting work with CoronaWhy and set up a pipeline for mining Covid related tweets 
+   + Won a Kaggle Competition (Covid 19)
+   + Won Sentinel Hub Picterra Custom Script competition
+   + Top 5% of Kaggle competitors (Kaggle Expert 3x) 
+   + Made 4PRs (3 merged, one in review) to the HuggingFace Datasets library 
+   
